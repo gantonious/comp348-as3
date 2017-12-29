@@ -31,6 +31,6 @@ public class ReaderState {
     }
 
     public PoemMessage getMessageFromState() {
-        return new PoemMessage(messageBuilder.toString());
+        return new PoemMessage(messageBuilder.toString().trim());
     }
 }
