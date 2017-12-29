@@ -9,10 +9,10 @@ package part1.protocol;
  * ./n
  *
  */
-public class PoemMessage {
+public class Message {
     private String messageBody;
 
-    public PoemMessage(String messageBody) {
+    public Message(String messageBody) {
         this.messageBody = messageBody;
     }
 

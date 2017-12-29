@@ -1,4 +1,6 @@
-package part1.protocol;
+package part1.protocol.messagereading;
+
+import part1.protocol.Message;
 
 import java.io.BufferedReader;
 
@@ -30,7 +32,7 @@ public class ReaderState {
         }
     }
 
-    public PoemMessage getMessageFromState() {
-        return new PoemMessage(messageBuilder.toString().trim());
+    public Message getMessageFromState() {
+        return new Message(messageBuilder.toString().trim());
     }
 }

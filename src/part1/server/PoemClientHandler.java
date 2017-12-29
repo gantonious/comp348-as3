@@ -1,7 +1,11 @@
 package part1.server;
 
-import part1.protocol.PoemMessage;
-import part1.protocol.PoemService;
+import part1.poems.PoemService;
+import part1.protocol.Message;
+import part1.protocol.MessageService;
+import part1.server.clientstate.ClientState;
+import part1.server.clientstate.WelcomeState;
+import statemachine.StateMachine;
 
 import java.net.Socket;
 
@@ -10,22 +14,16 @@ import java.net.Socket;
  */
 public class PoemClientHandler {
     private Socket clientSocket;
-    private PoemService poemService;
+    private MessageService messageService;
 
     public PoemClientHandler(Socket clientSocket) {
         this.clientSocket = clientSocket;
-        this.poemService = new PoemService(clientSocket);
+        this.messageService = new MessageService(clientSocket);
     }
 
     public void serveClient() {
-        while(true) {
-            PoemMessage poemMessage = poemService.readNextMessage();
-            if (poemMessage.getMessageBody().equals("END")) {
-
-                return;
-            }
-
-            poemService.writeMessage(poemMessage);
-        }
+        ClientState clientState = new ClientState(new PoemService(), messageService);
+        StateMachine<ClientState> clientStateMachine = new StateMachine<>(clientState);
+        clientStateMachine.setStateTo(new WelcomeState());
     }
 }

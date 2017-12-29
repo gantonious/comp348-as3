@@ -1,22 +1,24 @@
-package part1.protocol;
+package part1.protocol.messagereading;
 
-import part1.state.IState;
-import part1.state.StateMachine;
+import statemachine.IState;
+import statemachine.StateMachine;
 
 /**
  * Created by George on 2017-12-29.
  */
-public class ReadingMessageState implements IState<ReaderState> {
+public class NewLineDelimiterState implements IState<ReaderState> {
     @Override
     public void handle(StateMachine<ReaderState> stateMachine) {
         ReaderState readerState = stateMachine.getState();
         String nextLine = readerState.readNextLine();
 
-        if (nextLine.trim().isEmpty()) {
-            stateMachine.setStateTo(new NewLineDelimiterState());
+        if (".".equals(nextLine.trim())) {
+            stateMachine.finish();
             return;
         }
 
+        // the newline found is not part of the delimiter so include it in the message
+        readerState.getMessageBuilder().append("\n");
         readerState.getMessageBuilder().append(nextLine);
         readerState.getMessageBuilder().append("\n");
         stateMachine.setStateTo(new ReadingMessageState());
