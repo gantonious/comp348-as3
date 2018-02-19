@@ -1,5 +1,6 @@
 package part1;
 
+import part1.poems.PoemService;
 import part1.server.PoemServer;
 
 /**
@@ -7,7 +8,7 @@ import part1.server.PoemServer;
  */
 public class Main {
     public static void main(String[] args) {
-        PoemServer poemServer = new PoemServer(1822);
+        PoemServer poemServer = new PoemServer(1822, new PoemService());
         createShutdownHook(poemServer);
         poemServer.run();
     }

@@ -13,15 +13,17 @@ import java.net.Socket;
  */
 public class PoemClientHandler {
     private Socket clientSocket;
+    private PoemService poemService;
     private MessageService messageService;
 
-    public PoemClientHandler(Socket clientSocket) {
+    public PoemClientHandler(Socket clientSocket, PoemService poemService) {
         this.clientSocket = clientSocket;
+        this.poemService = poemService;
         this.messageService = new MessageService(clientSocket);
     }
 
     public void serveClient() {
-        ClientState clientState = new ClientState(new PoemService(), messageService);
+        ClientState clientState = new ClientState(poemService, messageService);
         StateMachine<ClientState> clientStateMachine = new StateMachine<>(clientState);
         clientStateMachine.setStateTo(new WelcomeState());
     }
