@@ -1,7 +1,40 @@
-The Programmers Love
+The Programmers Love by The Internet
 ---
 Roses are Red,
 Violets are Blue.
 Unexpected '}',
 On line 32.
+===
+Christmas Eve by Ella Higginson
+---
+Straight thro’ a fold of purple mist
+The sun goes down—a crimson wheel—
+And like an opal burns the sea
+That once was cold as steel.
+
+With pomp of purple, gold and red,
+Thou wilt come back at morrow’s dawn…
+But thou can’st never bring, O Sun,
+The Christmas that is gone!
+===
+Paris by Willa Cather
+---
+Behind the arch of glory sets the day;
+The river lies in curves of silver light,
+The Fields Elysian glitter in a spray
+Of golden dust; the gilded dome is bright,
+The towers of Notre Dame cut clean and gray
+The evening sky, and pale from left to right
+A hundred bridges leap from either quay.
+Pillared with pride, the city of delight
+Sits like an empress by her silver Seine,
+Heavy with jewels, all her splendid dower
+Flashing upon her, won from shore and main
+By shock of combat, sacked from town and tower.
+Wherever men have builded hall or fane
+Red war hath gleaned for her and men have slain
+To deck her loveliness. I feel again
+That joy which brings her art to faultless flower,
+That passion of her kings, who, reign on reign,
+Arrayed her star by star with pride and power
 ===
