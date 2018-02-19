@@ -1,11 +1,10 @@
 package part1.server;
 
 import part1.poems.PoemService;
-import part1.protocol.Message;
 import part1.protocol.MessageService;
 import part1.server.clientstate.ClientState;
 import part1.server.clientstate.WelcomeState;
-import statemachine.StateMachine;
+import part1.statemachine.StateMachine;
 
 import java.net.Socket;
 

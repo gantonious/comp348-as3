@@ -2,7 +2,7 @@ package part1.protocol;
 
 import part1.protocol.messagereading.ReaderState;
 import part1.protocol.messagereading.ReadingMessageState;
-import statemachine.StateMachine;
+import part1.statemachine.StateMachine;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

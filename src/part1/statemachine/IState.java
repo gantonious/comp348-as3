@@ -1,4 +1,4 @@
-package statemachine;
+package part1.statemachine;
 
 /**
  * Created by George on 2017-12-28.

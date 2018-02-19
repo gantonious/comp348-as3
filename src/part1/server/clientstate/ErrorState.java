@@ -2,8 +2,8 @@ package part1.server.clientstate;
 
 import part1.protocol.Message;
 import part1.protocol.MessageService;
-import statemachine.IState;
-import statemachine.StateMachine;
+import part1.statemachine.IState;
+import part1.statemachine.StateMachine;
 
 /**
  * Created by George on 2017-12-29.

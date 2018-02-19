@@ -1,7 +1,7 @@
 package part1.protocol.messagereading;
 
-import statemachine.IState;
-import statemachine.StateMachine;
+import part1.statemachine.IState;
+import part1.statemachine.StateMachine;
 
 /**
  * Created by George on 2017-12-29.

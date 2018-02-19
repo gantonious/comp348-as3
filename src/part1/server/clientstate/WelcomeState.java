@@ -4,8 +4,8 @@ import part1.poems.Poem;
 import part1.poems.PoemService;
 import part1.protocol.Message;
 import part1.protocol.MessageService;
-import statemachine.IState;
-import statemachine.StateMachine;
+import part1.statemachine.IState;
+import part1.statemachine.StateMachine;
 
 import java.util.List;
 
