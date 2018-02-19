@@ -38,8 +38,7 @@ public class MessageService {
     public void writeMessage(Message message) {
         try {
             dataOutputStream.write(message.getMessageBody().getBytes());
-            dataOutputStream.write("\n".getBytes());
-            dataOutputStream.write(".\n".getBytes());
+            dataOutputStream.write("\n\n.\n".getBytes());
         } catch (Exception e) {
 
         }

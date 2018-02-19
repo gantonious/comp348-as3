@@ -30,7 +30,7 @@ public class WelcomeState implements IState<ClientState> {
             welcomeMessageBuilder.append(String.format("%d. %s\n", i + 1, poems.get(i).getTitle()));
         }
 
-        messageService.writeMessage(new Message(welcomeMessageBuilder.toString()));
+        messageService.writeMessage(new Message(welcomeMessageBuilder.toString().trim()));
         stateMachine.setStateTo(new WaitForPoemSelectionState(poems));
     }
 }
