@@ -25,7 +25,7 @@ public class WaitForPoemSelectionState implements IState<ClientState> {
 
         if (isSelectionValid(selectionMessage.getMessageBody())) {
             int selection = Integer.parseInt(selectionMessage.getMessageBody());
-            stateMachine.setStateTo(new DelieverPoemState(poems.get(selection - 1)));
+            stateMachine.setStateTo(new DeliverPoemState(poems.get(selection - 1)));
         } else {
             stateMachine.setStateTo(new ErrorState("Make sure you select using one of the numbers listed."));
         }

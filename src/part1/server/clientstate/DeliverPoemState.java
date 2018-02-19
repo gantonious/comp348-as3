@@ -9,10 +9,10 @@ import part1.statemachine.StateMachine;
 /**
  * Created by George on 2017-12-29.
  */
-public class DelieverPoemState implements IState<ClientState> {
+public class DeliverPoemState implements IState<ClientState> {
     private Poem selectedPoem;
 
-    public DelieverPoemState(Poem selectedPoem) {
+    public DeliverPoemState(Poem selectedPoem) {
         this.selectedPoem = selectedPoem;
     }
 
