@@ -16,5 +16,5 @@ task:
 	jar cvf $(TASK_JAR) $(TASK_PACKAGE)/*.class
 
 clean:
-	rm *.jar
-	rm -r **/*.class
+	rm -f *.jar
+	find . -name "*.class" -type f -delete

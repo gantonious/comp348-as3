@@ -18,7 +18,7 @@ public class ComputePrimeNumberClient {
         }
         try {
             String name = "RemoteTaskExecutor";
-            Registry registry = LocateRegistry.getRegistry(args[0]);
+            Registry registry = LocateRegistry.getRegistry();
             RemoteTaskExecutor remoteTaskExecutor = (RemoteTaskExecutor) registry.lookup(name);
 
             Console console = System.console();
