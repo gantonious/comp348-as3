@@ -6,14 +6,15 @@ CLIENT_PACKAGE = src/part2/client
 all: server client
 
 server: task
-	javac -cp $(TASK_JAR) $(SERVER_PACKAGE)/*.java
+	javac -cp $(TASK_JAR) $(SERVER_PACKAGE)/RemoteTaskExecutor.java
 
 client: task
-	javac -cp $(TASK_JAR) $(CLIENT_PACKAGE)/*.java
+	javac -cp $(TASK_JAR) -d . $(CLIENT_PACKAGE)/PrimeCalculatorTask.java $(CLIENT_PACKAGE)/ComputePrimeNumberClient.java
 
 task:
 	javac $(TASK_PACKAGE)/*.java
-	jar cvf $(TASK_JAR) $(TASK_PACKAGE)/*.class
+	cd src && jar cvf $(TASK_JAR) part2/task/*.class
+	mv src/$(TASK_JAR) .
 
 clean:
 	rm -f *.jar

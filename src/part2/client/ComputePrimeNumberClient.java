@@ -1,6 +1,6 @@
 package part2.client;
 
-import part2.server.RemoteTaskExecutor;
+import part2.task.TaskExecutor;
 
 import java.io.Console;
 import java.math.BigInteger;
@@ -19,7 +19,7 @@ public class ComputePrimeNumberClient {
         try {
             String name = "RemoteTaskExecutor";
             Registry registry = LocateRegistry.getRegistry();
-            RemoteTaskExecutor remoteTaskExecutor = (RemoteTaskExecutor) registry.lookup(name);
+            TaskExecutor remoteTaskExecutor = (TaskExecutor) registry.lookup(name);
 
             Console console = System.console();
             int lowerBound = Integer.parseInt(console.readLine("Lower bound: "));
