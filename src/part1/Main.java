@@ -8,7 +8,7 @@ import part1.server.PoemServer;
  */
 public class Main {
     public static void main(String[] args) {
-        PoemServer poemServer = new PoemServer(1822, new PoemService("src/part1/poems.txt"));
+        PoemServer poemServer = new PoemServer(1822, new PoemService(args[0]));
         createShutdownHook(poemServer);
         poemServer.run();
     }
