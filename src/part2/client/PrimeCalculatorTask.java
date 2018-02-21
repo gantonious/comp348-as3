@@ -2,12 +2,13 @@ package part2.client;
 
 import part2.task.Task;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 
 /**
  * Created by George on 2018-02-19.
  */
-public class PrimeCalculatorTask implements Task<BigInteger> {
+public class PrimeCalculatorTask implements Task<BigInteger>, Serializable {
     private BigInteger lowerBound;
     private BigInteger upperBound;
 

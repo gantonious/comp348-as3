@@ -21,6 +21,7 @@ public class ComputePrimeNumberClient {
             Registry registry = LocateRegistry.getRegistry(args[0]);
             TaskExecutor remoteTaskExecutor = (TaskExecutor) registry.lookup(name);
 
+            System.out.println("Connected to Remote Execution Server.");
             Console console = System.console();
             int lowerBound = Integer.parseInt(console.readLine("Lower bound: "));
             int upperBound = Integer.parseInt(console.readLine("Upper bound: "));
