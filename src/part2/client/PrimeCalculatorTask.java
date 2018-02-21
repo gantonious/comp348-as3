@@ -52,7 +52,7 @@ public class PrimeCalculatorTask implements Task<BigInteger> {
     }
 
     private boolean isTwo(BigInteger number) {
-        return isDivisibleBy(number, BigInteger.valueOf(2));
+        return number.equals(BigInteger.valueOf(2));
     }
 
     private boolean isDivisibleBy(BigInteger number, BigInteger divisor) {
@@ -60,9 +60,11 @@ public class PrimeCalculatorTask implements Task<BigInteger> {
     }
 
     private boolean isPrimeWithinBoundsHelper(BigInteger number) {
-        BigInteger halfUpperBound = number.divide(BigInteger.valueOf(2));
+        BigInteger clampedLowerBound = lowerBound.compareTo(BigInteger.ONE) <= 0 ? BigInteger.valueOf(2) : lowerBound;
+        BigInteger halfUpperBound = upperBound.divide(BigInteger.valueOf(2));
+        halfUpperBound = number.compareTo(halfUpperBound) < 0 ? number : halfUpperBound;
 
-        for (BigInteger i = lowerBound; i.compareTo(halfUpperBound) <= 0; i = i.add(BigInteger.ONE)) {
+        for (BigInteger i = clampedLowerBound; i.compareTo(halfUpperBound) < 0; i = i.add(BigInteger.ONE)) {
             if (isDivisibleBy(number, i)) {
                 return false;
             }

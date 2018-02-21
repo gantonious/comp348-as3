@@ -12,7 +12,12 @@ import java.rmi.registry.Registry;
  */
 public class ComputePrimeNumberClient {
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
+        if (1 == 1) {
+            System.out.println(new PrimeCalculatorTask(1, 2200).execute());
+            return;
+        }
+
         if (System.getSecurityManager() == null) {
             System.setSecurityManager(new SecurityManager());
         }
