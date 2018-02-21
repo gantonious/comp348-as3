@@ -22,9 +22,9 @@ public class RemoteTaskExecutor implements TaskExecutor {
             TaskExecutor stub = (TaskExecutor) UnicastRemoteObject.exportObject(taskExecutor, 0);
             Registry registry = LocateRegistry.getRegistry();
             registry.rebind(name, stub);
-            System.out.println("RemoteTaskExecutor bound");
+            System.out.println("RemoteTaskExecutor ready.");
         } catch (Exception e) {
-            System.err.println("RemoteTaskExecutor exception:");
+            System.err.println("RemoteTaskExecutor initialization failed.");
             e.printStackTrace();
         }
     }

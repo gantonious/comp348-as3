@@ -30,7 +30,7 @@ public class ComputePrimeNumberClient {
             System.out.printf("Largest Prime in Range: %s\n", result.toString());
 
         } catch (Exception e) {
-            System.err.println("ComputePi exception:");
+            System.err.println("Compute prime number exception:");
             e.printStackTrace();
         }
     }
