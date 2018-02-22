@@ -61,11 +61,9 @@ public class PrimeCalculatorTask implements Task<BigInteger>, Serializable {
     }
 
     private boolean isPrimeWithinBoundsHelper(BigInteger number) {
-        BigInteger clampedLowerBound = lowerBound.compareTo(BigInteger.ONE) <= 0 ? BigInteger.valueOf(2) : lowerBound;
-        BigInteger halfUpperBound = upperBound.divide(BigInteger.valueOf(2));
-        halfUpperBound = number.compareTo(halfUpperBound) < 0 ? number : halfUpperBound;
+        BigInteger halfOfNumber = number.divide(BigInteger.valueOf(2));
 
-        for (BigInteger i = clampedLowerBound; i.compareTo(halfUpperBound) < 0; i = i.add(BigInteger.ONE)) {
+        for (BigInteger i = BigInteger.valueOf(3); i.compareTo(halfOfNumber) < 0; i = i.add(BigInteger.valueOf(2))) {
             if (isDivisibleBy(number, i)) {
                 return false;
             }

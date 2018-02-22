@@ -110,4 +110,4 @@ The structure of this assignment followed a similar structure to the PI sample p
 
 For this part a `Task` implementation was created that computes the largest prime number within a given range and throws and exception if one cannot be found. The algorithm itself is not too complex. It iterates through all the numbers within the range in order and updates the output when a new prime is found.
 
-To determine if a number is prime we first check if it's `2` if so then we just return true. After we check if the number is even, if so we return false right away. Then we iterate through all the odd numbers (except for one) until we reach the number we're checking, if the number is not divisible by any of those numbers then we can say it's even.
+To determine if a number is prime we first check if it's `2` if so then we just return true. After we check if the number is even, if so we return false right away. Then we iterate through all the odd numbers (except for one) until we reach half of the number we're checking, if the number is not divisible by any of those numbers then we can say it's even.
