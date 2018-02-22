@@ -1,4 +1,4 @@
-# COMP 366 Assignment 3
+# COMP 348 Assignment 3
 
 I declare that this assignment is my own work and that all material previously written or published in any source by any other person has been duly acknowledged in the assignment. I have not submitted this work, or a significant part thereof, previously as part of any academic program. In submitting this assignment I give permission to copy it for assessment purposes only.
 
@@ -16,13 +16,50 @@ make
 
 ### Usage
 
+To launch the server do:
+
 ```bash
 make runPodServer
 ```
 
+To start a session with the server do:
+
+```bash
+telnet localhost 1822
+```
+
+The message format is discussed in the design section below but to mark the end of a message add an empty line followed by a line with a period on it followed by a newline character. This is an example of a `telnet` sessions with the PoD server.
+
+```
+telnet: Trying ::1...
+telnet: Connected to localhost.
+telnet: Escape character is '^]'.
+server: Welcome to the Poem of The Day Server
+server: Select one of the following poems:
+server: 1. The Programmers Love by The Internet
+server: 2. Christmas Eve by Ella Higginson
+server: 3. Paris by Willa Cather
+server:
+server: .
+client: 1
+client:
+client: .
+server: Title: The Programmers Love by The Internet
+server: ----------------
+server: Roses are Red,
+server: Violets are Blue.
+server: Unexpected '}',
+server: On line 32.
+server: ----------------
+server: Thanks for reading, visit again soon!
+server:
+server: .
+telnet: Connection closed by foreign host.
+```
+
 ### Design
 
-I seperated the design for this server into 2 main parts. The protocol and the business logic on top of it (i.e. the PoD server). The protocol is specified and discussed in pod_spec.pdf. The state machine handling client interactions is also specified in that document.
+I seperated the design for this server into 2 main parts. The protocol and the business logic on top of it (i.e. the PoD server). The protocol is specified and discussed in `pod_spec.pdf`. The state machine handling client interactions is also specified in that document.
 
 At a high level though, the PoD server is essentially just sending text based messages back and forth between the client. I've opted for a simple protocol where messages are formated as so (the newline characters are shown for visualization purposes):
 
@@ -40,6 +77,8 @@ public void writeMessage(Message message);
 ```
 
 For the usecase of this asssignment `telnet` is utilized as the client. However, using the `MessageService` class another client could be implemented in java without worrying about the underlying protocol.
+
+When ever a new client connection is established the client statemachine is activated for that client on a seperate thread. The state machine uses the read and write methods discussed above to communicate with the client. The state machine is discussed in greater detail in `pod_spec.pdf`.
 
 ## Part 2: RmiPrimeCalculator Server
 
