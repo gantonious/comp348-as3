@@ -105,3 +105,9 @@ make runPrimeCalculatorClient
 The client will prompt the user for a lower and upper bound then return the highest prime number in between.
 
 ### Design
+
+The structure of this assignment followed a similar structure to the PI sample provided by oracle (https://docs.oracle.com/javase/tutorial/rmi/overview.html). There is a seperate `Task` package that provides a `TaskExecutor` interface and a `Task` interface. The server class implements the `TaskExecutor` and accepts `Task` implementations from remote clients.
+
+For this part a `Task` implementation was created that computes the largest prime number within a given range and throws and exception if one cannot be found. The algorithm itself is not too complex. It iterates through all the numbers within the range in order and updates the output when a new prime is found.
+
+To determine if a number is prime we first check if it's `2` if so then we just return true. After we check if the number is even, if so we return false right away. Then we iterate through all the odd numbers (except for one) until we reach the number we're checking, if the number is not divisible by any of those numbers then we can say it's even.
