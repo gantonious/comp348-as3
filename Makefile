@@ -8,7 +8,7 @@ SRC_DIR = ./src
 
 all: sources
 
-sources: output
+sources: task output
 	@echo "[=====Building Source=====]"
 	javac -cp $(OUTPUT_DIR)/$(TASK_JAR) \
 		-d $(OUTPUT_DIR) \
