@@ -16,13 +16,13 @@ make
 
 ### Usage
 
-To launch the server do:
+To launch the server do (you can pass in `poems.txt` to the server):
 
 ```bash
 make runPodServer POEMS_FILE=[path_to_poems]
 ```
 
-The poems file should contain all the poems seperated by a `===` sequence. Within a poem the title and content should be sperated using a `---` sequence. The following is an example of a properly constructed poems file.
+The poems file should contain all the poems seperated by a `===` sequence. Within a poem the title and content should be sperated using a `---` sequence. The following is an example of a properly constructed poems file:
 
 ```
 Title of the first Poem
@@ -94,6 +94,36 @@ For the usecase of this asssignment `telnet` is utilized as the client. However,
 
 When ever a new client connection is established the client statemachine is activated for that client on a seperate thread. The state machine uses the read and write methods discussed above to communicate with the client. The state machine is discussed in greater detail in `pod_spec.pdf`.
 
+### Test Plan
+
+To test the server `telnet` was used to interact with it at described above. All the main flows of the state machine were tested and are outlined below.
+
+### Test Cases
+
+### 1) Testing correct flow of the server
+
+For this case the server was launched and `telnet` was used to connect to it. After the server listed the available poems the client requested a valid poem.
+
+**Expected Result**
+
+The server returns the name and content of the poem.
+
+**Actual Result**
+
+The server returned the name and content of the poem.
+
+### 2) Testing receiving bad poem selection from the user
+
+For this case the server was launched and `telnet` was used to connect to it. After the server listed the available poems the client made an invalid poem request.
+
+**Expected Result**
+
+The server returns an error message indicating that the client made a bad poem selection.
+
+**Actual Result**
+
+The server returned an error message indicating that the client made a bad poem selection.
+
 ## Part 2: RmiPrimeCalculator Server
 
 ### Usage
@@ -125,3 +155,6 @@ The structure of this assignment followed a similar structure to the PI sample p
 For this part a `Task` implementation was created that computes the largest prime number within a given range and throws and exception if one cannot be found. The algorithm itself is not too complex. It iterates through all the numbers within the range in order and updates the output when a new prime is found.
 
 To determine if a number is prime we first check if it's `2` if so then we just return true. After we check if the number is even, if so we return false right away. Then we iterate through all the odd numbers (except for one) until we reach half of the number we're checking, if the number is not divisible by any of those numbers then we can say it's even.
+
+### Test Plan
+
