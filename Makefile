@@ -6,6 +6,8 @@ POEM_PACKAGE = src/part1/
 OUTPUT_DIR = ./out/production/as3
 SRC_DIR = ./src
 
+POEMS_FILE =
+
 all: sources
 
 sources: task output
@@ -28,7 +30,7 @@ task: output
 
 runPodServer: sources
 	@echo "[=====Running PoD Server=====]"
-	java -cp out/production/as3 part1.Main src/part1/poems.txt
+	java -cp out/production/as3 part1.Main $(POEMS_FILE)
 
 runRegistry:
 	@echo "[=====Running RMI Registry=====]"

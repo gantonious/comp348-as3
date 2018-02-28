@@ -19,7 +19,21 @@ make
 To launch the server do:
 
 ```bash
-make runPodServer
+make runPodServer POEMS_FILE=[path_to_poems]
+```
+
+The poems file should contain all the poems seperated by a `===` sequence. Within a poem the title and content should be sperated using a `---` sequence. The following is an example of a properly constructed poems file.
+
+```
+Title of the first Poem
+---
+Content
+of the first Poem.
+===
+Title of the second Poem
+---
+Content of the second Poem.
+===
 ```
 
 To start a session with the server do:
