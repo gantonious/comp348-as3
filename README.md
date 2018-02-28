@@ -162,3 +162,8 @@ The actual use case for this part is not too complicated and therefor simple to 
 
 ### Test Cases
 
+### 1) Should raise an exception if no prime number exists within the given range
+
+After the registry and server were launched the client was started with a range of [-5, 1]. There is no prime number in this range.
+
+**Expected Result:**

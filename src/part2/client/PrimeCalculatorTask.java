@@ -41,7 +41,7 @@ public class PrimeCalculatorTask implements Task<BigInteger>, Serializable {
     private boolean isPrimeWithinBounds(BigInteger number) {
         if (isTwo(number)) {
             return true;
-        } else if (isOne(number) || isEven(number)) {
+        } else if (isLessThanTwo(number) || isEven(number)) {
             return false;
         }
 
@@ -52,8 +52,8 @@ public class PrimeCalculatorTask implements Task<BigInteger>, Serializable {
         return number.mod(BigInteger.valueOf(2)).equals(BigInteger.ZERO);
     }
 
-    private boolean isOne(BigInteger number) {
-        return number.equals(BigInteger.valueOf(1));
+    private boolean isLessThanTwo(BigInteger number) {
+        return number.compareTo(BigInteger.valueOf(2)) < 0;
     }
 
     private boolean isTwo(BigInteger number) {
