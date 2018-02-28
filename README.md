@@ -158,3 +158,7 @@ To determine if a number is prime we first check if it's `2` if so then we just 
 
 ### Test Plan
 
+The actual use case for this part is not too complicated and therefor simple to test. The first major think how ever to test was to ensure that the server and client were properly exporting and binding to the remote interface correctly. After that behavior was confirmed then the prime calculation was checked. The behavior was verified using the test cases below.
+
+### Test Cases
+
