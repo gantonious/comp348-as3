@@ -1,10 +1,14 @@
+PACKAGE_NAME = comp346_as3_3364768
+
 TASK_JAR = task.jar
 SERVER_PACKAGE = src/part2/server
 CLIENT_PACKAGE = src/part2/client
 TASK_PACKAGE = src/part2/task
 POEM_PACKAGE = src/part1/
+
 OUTPUT_DIR = ./out/production/as3
 SRC_DIR = ./src
+DOCS_DIR = ./docs
 
 POEMS_FILE =
 
@@ -55,3 +59,9 @@ clean:
 	find . -name "*.jar" -type f -delete
 	find . -name "*.class" -type f -delete
 	rm -rf out
+
+package:
+	@mkdir -p $(PACKAGE_NAME)
+	@cp -r Makefile $(SRC_DIR) $(DOCS_DIR) *.md *.txt *.policy $(PACKAGE_NAME)/
+	@zip -r $(PACKAGE_NAME).zip $(PACKAGE_NAME)/
+	@rm -rf $(PACKAGE_NAME)
