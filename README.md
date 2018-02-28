@@ -162,8 +162,34 @@ The actual use case for this part is not too complicated and therefor simple to 
 
 ### Test Cases
 
-### 1) Should raise an exception if no prime number exists within the given range
+### 1) Should return the highest prime number if there is a prime number in the given range.
+
+After the registry and server were launched the client was started with a range of [-5, 10]. 7 is the largest prime in this range
+
+**Expected Result:**
+
+```
+7
+```
+
+**Actual Result:**
+
+```
+7
+```
+
+### 2) Should raise an exception if no prime number exists within the given range
 
 After the registry and server were launched the client was started with a range of [-5, 1]. There is no prime number in this range.
 
 **Expected Result:**
+
+```
+part2.client.PrimeCalculatorTask$NoPrimeFoundException: Could not find a prime number within -5 and 1.
+```
+
+**Actual Result:**
+
+```
+part2.client.PrimeCalculatorTask$NoPrimeFoundException: Could not find a prime number within -5 and 1.
+```
