@@ -59,7 +59,7 @@ telnet: Connection closed by foreign host.
 
 ### Design
 
-I seperated the design for this server into 2 main parts. The protocol and the business logic on top of it (i.e. the PoD server). The protocol is specified and discussed in `pod_spec.pdf`. The state machine handling client interactions is also specified in that document.
+I seperated the design for this server into 2 main parts. The protocol and the business logic on top of it (i.e. the PoD server). The protocol is specified and discussed in `pod_spec.pdf` found in the `docs\` directory. The state machine handling client interactions is also specified in that document.
 
 At a high level though, the PoD server is essentially just sending text based messages back and forth between the client. I've opted for a simple protocol where messages are formated as so (the newline characters are shown for visualization purposes):
 
